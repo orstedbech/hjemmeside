@@ -1,0 +1,18 @@
+# Raw source files (optimised copies live in assets/)
+/Logo.png
+/Adam Ørsted.png
+/Jomaa Dababech.png
+/12ca9111-3949-4449-ac84-e4bd68a68476.png
+/ed.avif
+/virksomhedsbeskrivelse.md.pdf
+
+# Internal working files
+/PRODUCT.md
+/DESIGN.md
+/.impeccable/
+/.claude/
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
