@@ -500,6 +500,6 @@ a, button, summary { touch-action: manipulation; }
 .legal__updated { margin-top: 12px; color: var(--ink-2); font-size: 0.95rem; }
 .legal h2 { margin-top: 44px; font-size: var(--f-h3); letter-spacing: -0.02em; }
 .legal p { margin-top: 12px; max-width: 68ch; }
-.legal a { color: var(--navy); }
+.legal a:not(.btn) { color: var(--navy); }
 .legal-footer { padding-block: 32px 40px; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--ink-2); }
 .legal-footer a { color: inherit; }
