@@ -9,9 +9,18 @@
   /* Header: transparent over the hero, solid once the hero has scrolled away */
   var header = document.querySelector("[data-header]");
   var hero = document.querySelector(".hero");
+  /* Mobile call/book bar: shown between the hero and the booking section */
+  var actionBar = document.querySelector("[data-action-bar]");
+  var bookSection = document.getElementById("book");
+
   function updateHeader() {
     var limit = hero ? hero.offsetHeight - 90 : 40;
     header.classList.toggle("is-solid", window.scrollY > limit);
+    if (actionBar && bookSection) {
+      var pastHero = window.scrollY > limit;
+      var beforeBook = bookSection.getBoundingClientRect().top > window.innerHeight * 0.85;
+      actionBar.classList.toggle("is-visible", pastHero && beforeBook);
+    }
   }
   updateHeader();
   window.addEventListener("scroll", updateHeader, { passive: true });
@@ -40,7 +49,7 @@
 
   /* Reveal on scroll: content is visible without JS; only lifted in when observed */
   var revealTargets = document.querySelectorAll(
-    ".section-head, .problem__text, .problem__photo, .step, .services__top, .services__list li, .services__photo, .facts li, .person, .about__photo, .book__intro, .form"
+    ".section-head, .problem__text, .problem__photo, .step, .services__top, .services__list li, .services__photo, .facts li, .person, .about__photo, .faq__intro, .faq__list, .book__intro, .form"
   );
   var estimate = document.querySelector("[data-estimate]");
 
@@ -145,7 +154,7 @@
         if (!res.ok) throw new Error("status " + res.status);
         form.reset();
         required.forEach(function (input) { setError(input, false); });
-        showStatus("Tak! Vi har modtaget jeres forespørgsel og vender tilbage hurtigst muligt.", "ok");
+        showStatus("Tak! Vi har modtaget jeres forespørgsel og kontakter jer inden for 1 arbejdsdag.", "ok");
       })
       .catch(function () {
         showStatus("Forespørgslen blev ikke sendt. Prøv igen, eller ring på 53 59 34 24.", "error");
