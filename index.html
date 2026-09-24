@@ -17,7 +17,7 @@
   <link rel="canonical" href="https://orstedbech.dk/">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260924d">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260924e">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -103,20 +103,68 @@
               <p>Udarbejdes efter det gratis isoleringstjek</p>
             </div>
           </header>
+          <p class="estimate__example">Eksempel: ejendom med 100&nbsp;m uisolerede rør i kælderen</p>
           <dl class="estimate__rows">
             <div class="estimate__row">
-              <dt>Nuværende varmetab</dt>
-              <dd>fra uisolerede rør og komponenter</dd>
+              <dt>Nuværende varmetab<span>fra uisolerede rør og komponenter</span></dt>
+              <dd><span>ca.&nbsp;6&nbsp;kW&nbsp;·</span> <span>ca.&nbsp;42&nbsp;MWh/år</span></dd>
             </div>
             <div class="estimate__row">
-              <dt>Forventet besparelse</dt>
-              <dd>opgjort i kroner om året</dd>
+              <dt>Forventet besparelse<span>opgjort i kroner om året</span></dt>
+              <dd><span>ca.&nbsp;20.000&nbsp;kr./år</span></dd>
             </div>
             <div class="estimate__row">
-              <dt>Tilbagebetalingstid</dt>
-              <dd>hvornår isoleringen har tjent sig hjem</dd>
+              <dt>Tilbagebetalingstid<span>hvornår isoleringen har tjent sig hjem</span></dt>
+              <dd><span>ca.&nbsp;2–3&nbsp;år</span></dd>
             </div>
           </dl>
+          <details class="calc">
+            <summary>Sådan har vi regnet</summary>
+            <div class="calc__body">
+              <ol class="calc__steps">
+                <li>
+                  <h4>Pris på varme</h4>
+                  <p>HOFOR's energipris 2026: 785,76&nbsp;kr./MWh inkl. moms (628,61&nbsp;kr. ekskl. moms). Vi regner med prisen inkl. moms: ≈ 0,79&nbsp;kr./kWh.</p>
+                  <p>Kun energiprisen påvirkes af isolering. Effektbetalingen er fast og ændres ikke.</p>
+                </li>
+                <li>
+                  <h4>Varmetab fra uisoleret rør</h4>
+                  <p>Typisk stålrør Ø48&nbsp;mm, vandtemperatur 55–60&nbsp;°C, kældertemperatur 15–20&nbsp;°C: ca. 60&nbsp;W pr. meter.</p>
+                </li>
+                <li>
+                  <h4>Varmetab efter isolering</h4>
+                  <p>Med 40&nbsp;mm rørskål (mineraluld): ca. 8–10&nbsp;W pr. meter. Et uisoleret rør taber altså ca. 6–7 gange så meget som et isoleret.</p>
+                </li>
+                <li>
+                  <h4>Besparelse pr. meter</h4>
+                  <p>60&nbsp;W − ca. 10&nbsp;W = ca. 50&nbsp;W sparet pr. meter.</p>
+                  <p>Ca. 50&nbsp;W × ca. 7.000 driftstimer/år ≈ 350&nbsp;kWh/m (brutto).</p>
+                  <p>Konservativt regnet med 250&nbsp;kWh/m/år, fordi en del af varmetabet i praksis kommer bygningen til gode.</p>
+                  <p>250&nbsp;kWh × 0,79&nbsp;kr. ≈ 200&nbsp;kr. pr. meter pr. år.</p>
+                </li>
+                <li>
+                  <h4>Eksempel med 100&nbsp;m</h4>
+                  <p>100&nbsp;m × 60&nbsp;W ≈ 6&nbsp;kW løbende tab. Over ca. 7.000 driftstimer giver det ca. 42&nbsp;MWh om året.</p>
+                  <p>100&nbsp;m × 250&nbsp;kWh × 0,79&nbsp;kr. ≈ 20.000&nbsp;kr. om året.</p>
+                  <p>En tilbagebetalingstid på 2–3 år svarer til en samlet pris for isoleringen på ca. 40.000–60.000&nbsp;kr.</p>
+                </li>
+              </ol>
+              <h4>Antagelser og forudsætninger</h4>
+              <ul>
+                <li>Tallene er et eksempel. Jeres overslag bygger på det, vi måler og registrerer ved isoleringstjekket.</li>
+                <li>Rørene er i drift ca. 7.000 timer om året (rumvarme og varmt brugsvand).</li>
+                <li>Priserne er HOFOR's energipris for 2026 inkl. moms. Andre forsyninger og senere prisændringer giver andre tal.</li>
+                <li>Eksemplet omfatter kun rør. Uisolerede pumper, ventiler og fordelere regnes med i jeres overslag, hvis de findes.</li>
+                <li>Isoleringen udføres efter DS&nbsp;452.</li>
+              </ul>
+              <h4>Referencer</h4>
+              <ul>
+                <li>HOFOR: Priser på fjernvarme 2026</li>
+                <li>DS&nbsp;452: Termisk isolering af tekniske installationer</li>
+                <li>Producenternes tabelværdier for varmetab fra rør og rørskåle af mineraluld</li>
+              </ul>
+            </div>
+          </details>
           <p class="estimate__foot">I beslutter jer først, når I har set tallene. Tjekket forpligter ikke til noget.</p>
         </article>
       </div>
