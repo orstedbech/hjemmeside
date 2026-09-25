@@ -49,7 +49,7 @@
 
   /* Reveal on scroll: content is visible without JS; only lifted in when observed */
   var revealTargets = document.querySelectorAll(
-    ".section-head, .problem__text, .step, .services__top, .services__list li, .services__photo, .facts li, .person, .faq__intro, .faq__list, .book__intro, .form"
+    ".section-head, .problem__text, .step, .services__top, .services__list li, .services__photo, .person, .faq__intro, .faq__list, .book__intro, .form"
   );
   var estimate = document.querySelector("[data-estimate]");
 
@@ -60,7 +60,7 @@
       el.setAttribute("data-reveal", "");
     });
     // Stagger siblings inside the same list
-    document.querySelectorAll(".steps__list, .services__list, .facts, .people").forEach(function (list) {
+    document.querySelectorAll(".steps__list, .services__list, .people").forEach(function (list) {
       Array.prototype.forEach.call(list.children, function (child, i) {
         child.style.transitionDelay = Math.min(i * 90, 360) + "ms";
       });

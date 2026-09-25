@@ -308,6 +308,7 @@ a, button, summary { touch-action: manipulation; }
 .services { background: var(--navy); color: #fff; margin: var(--inset); border-radius: var(--radius); }
 .services__top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 48px; align-items: end; }
 .services__top p { color: var(--ice-muted); max-width: 48ch; }
+.services__top strong { color: #fff; font-weight: 600; }
 .services__grid { margin-top: clamp(48px, 6vw, 80px); display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: stretch; }
 .services__list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-light); }
 .services__list li {
@@ -319,13 +320,6 @@ a, button, summary { touch-action: manipulation; }
 .services__photo { margin: 0; border-radius: var(--radius-sm); overflow: hidden; }
 .services__photo img { width: 100%; height: 100%; object-fit: cover; }
 
-.facts { list-style: none; margin: clamp(56px, 7vw, 96px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.facts li {
-  display: flex; flex-direction: column; gap: 8px; min-height: 170px; justify-content: space-between;
-  padding: 24px; border-radius: 22px; background: var(--navy-soft);
-}
-.facts strong { font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.3rem); font-weight: 600; letter-spacing: -0.035em; line-height: 1; color: var(--ice); }
-.facts span { color: #d3e1ec; font-size: 0.95rem; }
 
 /* About */
 .section-head--split p { font-size: var(--f-lede); line-height: 1.45; color: var(--ink); max-width: 40ch; }
@@ -455,7 +449,6 @@ a, button, summary { touch-action: manipulation; }
 @media (max-width: 1100px) {
   .section-head { grid-template-columns: 1fr; }
   .section-head .btn { justify-self: start; }
-  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 860px) {
@@ -510,8 +503,6 @@ a, button, summary { touch-action: manipulation; }
   .hero__actions .btn { width: 100%; justify-content: center; }
   .form__grid { grid-template-columns: 1fr; }
   .form__foot .btn { width: 100%; justify-content: center; }
-  .facts { grid-template-columns: 1fr; }
-  .facts li { min-height: 0; }
   .estimate__row { grid-template-columns: 1fr; }
   .estimate__row dd { max-width: none; text-align: left; }
   .people { grid-template-columns: minmax(0, 420px); }
