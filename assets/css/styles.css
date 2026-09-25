@@ -88,7 +88,7 @@ p { margin: 0; text-wrap: pretty; }
 }
 .steps .container,
 .services .container,
-.footer .container { width: min(100% - 2 * var(--gutter), var(--max)); }
+.footer .container { width: min(100% - 2 * var(--gutter), var(--max)); container-type: inline-size; }
 
 .section { padding-block: var(--section); }
 
@@ -397,8 +397,11 @@ a, button, summary { touch-action: manipulation; }
 .footer__cvr { color: var(--ice-muted); }
 .footer__word {
   margin: clamp(56px, 8vw, 120px) 0 0;
-  font-size: clamp(3.4rem, 0.5rem + 12.4vw, 13.5rem); font-weight: 600; letter-spacing: -0.055em; line-height: 0.8;
-  color: var(--navy-soft); white-space: nowrap;
+  /* scales with the container so the name always fits on one line */
+  font-size: clamp(3.4rem, 0.5rem + 12.4vw, 13.5rem);
+  font-size: min(13.5rem, 100cqi / 6.4);
+  font-weight: 600; letter-spacing: -0.055em; line-height: 0.8;
+  color: var(--navy-soft); white-space: nowrap; text-align: center;
 }
 .footer__base a { color: inherit; }
 .footer__base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding: 28px 0 32px; font-size: 0.85rem; color: var(--ice-muted); }
