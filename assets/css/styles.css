@@ -202,7 +202,7 @@ a, button, summary { touch-action: manipulation; }
 
 /* Problem + estimate */
 .problem__grid { display: grid; gap: clamp(48px, 6vw, 80px); }
-.problem__text { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 20px clamp(28px, 4vw, 64px); align-items: end; }
+.problem__text { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 20px clamp(28px, 4vw, 64px); align-items: start; }
 .problem__text .h2 { grid-row: span 2; max-width: 16ch; }
 .problem__text .lede { max-width: 40ch; }
 .problem__text p:not(.lede) { max-width: 52ch; color: var(--ink-2); }
@@ -282,7 +282,9 @@ a, button, summary { touch-action: manipulation; }
 .steps { background: var(--paper); border-radius: var(--radius); margin-inline: var(--inset); }
 .section-head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto; gap: 24px 48px; align-items: end; }
 .section-head p { color: var(--ink-2); max-width: 44ch; }
-.section-head--split { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+.section-head--split { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: start; }
+/* Side-by-side heading and text: trim line spacing so the first lines' letters start at the same height */
+.problem__text .h2, .problem__text .lede, .section-head--split .h2, .section-head--split p { text-box: trim-start cap alphabetic; }
 .steps__list {
   list-style: none; margin: clamp(48px, 6vw, 80px) 0 0; padding: 0;
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;
