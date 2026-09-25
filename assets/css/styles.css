@@ -202,16 +202,13 @@ a, button, summary { touch-action: manipulation; }
   display: grid; gap: clamp(28px, 4vw, 56px);
   grid-template-columns: repeat(12, minmax(0, 1fr));
   grid-template-areas:
-    "text text text text text text text est est est est est"
-    "photo photo photo photo photo photo photo photo photo photo photo photo";
+    "text text text text text text text est est est est est";
   align-items: start;
 }
 .problem__text { grid-area: text; }
 .problem__text .h2 { max-width: 16ch; }
 .problem__text .lede { margin-top: 28px; max-width: 40ch; }
 .problem__text p:not(.lede) { margin-top: 18px; max-width: 58ch; color: var(--ink-2); }
-.problem__photo { grid-area: photo; margin: 0; border-radius: var(--radius); overflow: hidden; aspect-ratio: 21 / 8; }
-.problem__photo img { width: 100%; height: 100%; object-fit: cover; }
 
 .estimate {
   grid-area: est;
@@ -480,8 +477,7 @@ a, button, summary { touch-action: manipulation; }
   .site-header.menu-open .brand__dark { opacity: 1; }
   .site-header.menu-open .menu-toggle { color: var(--navy); border-color: var(--line); }
 
-  .problem__grid { grid-template-columns: 1fr; grid-template-areas: "text" "est" "photo"; }
-  .problem__photo { aspect-ratio: 16 / 10; }
+  .problem__grid { grid-template-columns: 1fr; grid-template-areas: "text" "est"; }
   .steps__list { grid-template-columns: 1fr; }
   .step { min-height: 0; }
   .step h3 { padding-top: 28px; }

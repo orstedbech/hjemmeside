@@ -49,7 +49,7 @@
 
   /* Reveal on scroll: content is visible without JS; only lifted in when observed */
   var revealTargets = document.querySelectorAll(
-    ".section-head, .problem__text, .problem__photo, .step, .services__top, .services__list li, .services__photo, .facts li, .person, .about__photo, .faq__intro, .faq__list, .book__intro, .form"
+    ".section-head, .problem__text, .step, .services__top, .services__list li, .services__photo, .facts li, .person, .about__photo, .faq__intro, .faq__list, .book__intro, .form"
   );
   var estimate = document.querySelector("[data-estimate]");
 
