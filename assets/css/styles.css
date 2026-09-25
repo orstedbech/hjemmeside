@@ -202,12 +202,12 @@ a, button, summary { touch-action: manipulation; }
   display: grid; gap: clamp(28px, 4vw, 56px);
   grid-template-columns: minmax(0, 1fr);
   grid-template-areas: "text" "est";
-  align-items: start;
+  align-items: start; justify-items: center;
 }
-.problem__text { grid-area: text; }
-.problem__text .h2 { max-width: 16ch; }
-.problem__text .lede { margin-top: 28px; max-width: 40ch; }
-.problem__text p:not(.lede) { margin-top: 18px; max-width: 58ch; color: var(--ink-2); }
+.problem__text { grid-area: text; text-align: center; }
+.problem__text .h2 { max-width: 16ch; margin-inline: auto; }
+.problem__text .lede { margin: 28px auto 0; max-width: 40ch; }
+.problem__text p:not(.lede) { margin: 18px auto 0; max-width: 58ch; color: var(--ink-2); }
 
 .estimate {
   grid-area: est; width: 100%; max-width: 760px;
@@ -331,16 +331,14 @@ a, button, summary { touch-action: manipulation; }
 .section-head--split p { font-size: var(--f-lede); line-height: 1.45; color: var(--ink); max-width: 40ch; }
 .people {
   margin-top: clamp(48px, 6vw, 80px);
-  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; align-items: stretch;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 380px)); justify-content: center; gap: 16px; align-items: stretch;
 }
-.person { grid-column: span 4; margin: 0; display: flex; flex-direction: column; }
+.person { margin: 0; display: flex; flex-direction: column; }
 .person__img { background: #f5f5f5; border-radius: var(--radius); overflow: hidden; aspect-ratio: 1 / 1; display: grid; align-items: end; justify-items: center; }
 .person__img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }
 .person figcaption { padding: 20px 4px 0; }
 .person h3 { font-size: var(--f-h3); }
 .person p { margin-top: 6px; color: var(--ink-2); }
-.about__photo { grid-column: span 4; margin: 0; border-radius: var(--radius); overflow: hidden; }
-.about__photo img { width: 100%; height: 100%; object-fit: cover; }
 
 
 /* Book */
@@ -483,8 +481,6 @@ a, button, summary { touch-action: manipulation; }
   .services__photo { aspect-ratio: 16 / 10; }
   .services__list li { grid-template-columns: 1fr; }
   .people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .person { grid-column: span 1; }
-  .about__photo { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
   .book__inner { grid-template-columns: 1fr; }
   .faq__grid { grid-template-columns: 1fr; }
   .action-bar {
@@ -515,7 +511,7 @@ a, button, summary { touch-action: manipulation; }
   .facts li { min-height: 0; }
   .estimate__row { grid-template-columns: 1fr; }
   .estimate__row dd { max-width: none; text-align: left; }
-  .people { grid-template-columns: 1fr; }
+  .people { grid-template-columns: minmax(0, 420px); }
   .footer__grid { grid-template-columns: 1fr; }
   .menu-toggle__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 }
