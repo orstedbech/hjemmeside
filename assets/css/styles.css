@@ -306,7 +306,7 @@ a, button, summary { touch-action: manipulation; }
 
 /* Services */
 .services { background: var(--navy); color: #fff; margin: var(--inset); border-radius: var(--radius); }
-.services__top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 48px; align-items: end; }
+.services__top { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px clamp(28px, 4vw, 64px); align-items: end; }
 .services__top p { color: var(--ice-muted); max-width: 48ch; }
 .services__top strong { color: #fff; font-weight: 600; }
 .services__grid { margin-top: clamp(48px, 6vw, 80px); display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: stretch; }
