@@ -201,19 +201,14 @@ a, button, summary { touch-action: manipulation; }
 @keyframes hero-settle { to { transform: scale(1); } }
 
 /* Problem + estimate */
-.problem__grid {
-  display: grid; gap: clamp(28px, 4vw, 56px);
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas: "text" "est";
-  align-items: start; justify-items: center;
-}
-.problem__text { grid-area: text; text-align: center; }
-.problem__text .h2 { max-width: 16ch; margin-inline: auto; }
-.problem__text .lede { margin: 28px auto 0; max-width: 40ch; }
-.problem__text p:not(.lede) { margin: 18px auto 0; max-width: 58ch; color: var(--ink-2); }
+.problem__grid { display: grid; gap: clamp(48px, 6vw, 80px); }
+.problem__text { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 20px clamp(28px, 4vw, 64px); align-items: end; }
+.problem__text .h2 { grid-row: span 2; max-width: 16ch; }
+.problem__text .lede { max-width: 40ch; }
+.problem__text p:not(.lede) { max-width: 52ch; color: var(--ink-2); }
 
 .estimate {
-  grid-area: est; width: 100%; max-width: 760px;
+  width: 100%;
   background: var(--paper); border-radius: var(--radius);
   padding: clamp(24px, 3vw, 40px);
   box-shadow: 0 30px 60px -40px rgba(19, 29, 41, 0.45), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
@@ -221,22 +216,21 @@ a, button, summary { touch-action: manipulation; }
 .estimate__head { display: flex; align-items: center; gap: 16px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
 .estimate__head img { width: 52px; height: auto; }
 .estimate__head h3 { font-size: 1.6rem; }
-.estimate__head p { font-size: 0.92rem; color: var(--ink-2); margin-top: 4px; }
-.estimate__example {
-  display: inline-block; margin-top: 20px; padding: 6px 12px; border-radius: 10px;
-  background: var(--mist); font-size: 0.88rem; font-weight: 500; color: var(--ink-2); line-height: 1.35;
+.estimate__head p { font-size: 0.95rem; color: var(--ink-2); margin-top: 6px; }
+.estimate__head .estimate__eyebrow {
+  display: inline-block; margin: 0 0 8px; padding: 4px 10px; border-radius: 999px;
+  background: var(--ice); color: var(--navy); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em;
 }
-.estimate__rows { margin: 6px 0 0; }
+.estimate__rows { margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .estimate__row {
-  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 6px 20px;
-  padding: 22px 0; border-bottom: 1px solid var(--line);
+  display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 8px;
+  padding: 28px 24px 28px 0; border-bottom: 1px solid var(--line);
 }
-.estimate__row dt { font-weight: 600; font-size: 1.2rem; letter-spacing: -0.02em; line-height: 1.3; }
-.estimate__row dt span { display: block; margin-top: 4px; font-weight: 400; font-size: 0.98rem; letter-spacing: 0; color: var(--ink-2); }
+.estimate__row + .estimate__row { padding-left: 24px; border-left: 1px solid var(--line); }
+.estimate__row dt { font-weight: 500; font-size: 1rem; line-height: 1.3; color: var(--ink-2); }
 .estimate__row dd {
-  margin: 0; max-width: 9em; text-align: right;
-  font-weight: 600; font-size: 1.2rem; letter-spacing: -0.02em; line-height: 1.3; color: var(--navy);
-  font-variant-numeric: tabular-nums;
+  margin: 0;
+  font-weight: 600; font-size: clamp(1.5rem, 1.2rem + 1vw, 2.1rem); letter-spacing: -0.03em; line-height: 1.15; color: var(--navy);
 }
 .estimate__row dd span { display: block; white-space: nowrap; }
 .estimate__foot { margin-top: 22px; font-size: 0.95rem; color: var(--ink-2); }
@@ -486,7 +480,10 @@ a, button, summary { touch-action: manipulation; }
   .steps__list { grid-template-columns: 1fr; }
   .step { min-height: 0; }
   .step h3 { padding-top: 28px; }
-  .services__top, .services__grid, .section-head--split { grid-template-columns: 1fr; }
+  .services__top, .services__grid, .section-head--split, .problem__text { grid-template-columns: 1fr; }
+  .problem__text .h2 { grid-row: auto; }
+  .estimate__rows { grid-template-columns: 1fr; }
+  .estimate__row, .estimate__row + .estimate__row { padding: 22px 0; border-left: 0; }
   .services__photo { aspect-ratio: 16 / 10; }
   .services__list li { grid-template-columns: 1fr; }
   .people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -516,8 +513,6 @@ a, button, summary { touch-action: manipulation; }
   .hero__actions .btn { width: 100%; justify-content: center; }
   .form__grid { grid-template-columns: 1fr; }
   .form__foot .btn { width: 100%; justify-content: center; }
-  .estimate__row { grid-template-columns: 1fr; }
-  .estimate__row dd { max-width: none; text-align: left; }
   .people { grid-template-columns: minmax(0, 420px); }
   .footer__grid { grid-template-columns: 1fr; }
   .menu-toggle__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
