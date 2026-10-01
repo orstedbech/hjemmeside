@@ -145,6 +145,13 @@
     status.textContent = "";
     status.className = "form__status";
 
+    // Copy to the internal overview app; fire-and-forget so it never blocks the Formspree mail.
+    var leadUrl = form.getAttribute("data-lead-url");
+    if (leadUrl && window.URLSearchParams) {
+      fetch(leadUrl, { method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(form)) })
+        .catch(function () {});
+    }
+
     fetch(form.action, {
       method: "POST",
       body: new FormData(form),
